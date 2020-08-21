@@ -1,1 +1,123 @@
-<h2>Unicodify Group</h2>
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Unicodify Group - startups development</title>
+
+        <link href="css/jquery.mb.YTPlayer.min.css?_bn=7525" media="all" rel="stylesheet" type="text/css">
+        <link href="styles.css" media="all" rel="stylesheet" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="jquery.mb.YTPlayer.min.js?_bn=7525"></script>
+        <script src="player.js"></script>
+    </head>
+
+    <body>
+        <div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
+            <div class="console">
+                <button onclick="jQuery('#bgndVideo').toggleVolume()">mute/unmute</button>
+                <button onclick="jQuery('#bgndVideo').YTPFullscreen()">go fullscreen</button>
+                <button id="debugBtn" class="command" onclick="jQuery('#debug').toggle()">
+                    show/hide the console</button>
+            </div>
+            <br>
+            <br>
+            <h1 style="color:white">jQuery.mb.YTPlayer</h1>
+            <h2 style="color:white; text-align: center">An HTML5 Background player
+                <br>for YouTube videos</h2>
+            <div id="filtersControl">
+                <h2 style="color:white">Apply filters</h2>
+                <h3 style="color: white">* Does not work in IE.</h3>
+                <button id="toggleFilters" onclick="jQuery('#bgndVideo').YTPToggleFilters(function(a){if(!a) {$('#toggleFilters').html('enable filters')} else {$('#toggleFilters').html('disable filters')}})">
+                    disable all filters
+                </button>
+                <script>
+                    function rFCallback(f) {
+                        $(".slider[data-filter=" + f + "]").updateSliderVal(0);
+                    }
+                </script>
+                <button id="removeFilters" onclick="jQuery('#bgndVideo').YTPRemoveFilter(rFCallback)">
+                    remove all filters
+                </button>
+                <div class="slider" data-filter="grayscale">
+                    <span>grayscale</span>
+                </div>
+                <div class="slider" data-filter="hue_rotate" data-scale="360">
+                    <span>hue rotate</span>
+                </div>
+                <div class="slider" data-filter="invert">
+                    <span>invert</span>
+                </div>
+                <div class="slider" data-filter="sepia">
+                    <span>sepia</span>
+                </div>
+                <div class="slider" data-filter="opacity">
+                    <span>opacity</span>
+                </div>
+                <div class="slider" data-filter="saturate" data-scale="1000">
+                    <span>saturate</span>
+                </div>
+                <div class="slider" data-filter="brightness" data-scale="200">
+                    <span>brightness</span>
+                </div>
+                <div class="slider" data-filter="contrast" data-scale="500">
+                    <span>contrast</span>
+                </div>
+                <div class="slider" data-filter="blur" data-scale="50">
+                    <span>blur</span>
+                </div>
+                <div id="filterScript"></div>
+
+                <h2 style="color:white">Apply mask</h2>
+                <button class="command" onclick="jQuery('#bgndVideo').YTPAddMask('../examples/assets/mask-1.png')">Add mask</button>
+                <button class="command" onclick="jQuery('#bgndVideo').YTPRemoveMask()">Remove mask</button>
+
+            </div>
+            <div id="changeVideo">
+                <h2 style="color:white">Change video</h2>
+                <button class="command" onclick="jQuery('#bgndVideo').YTPChangeVideo({videoURL: '7SnmCUwOsts', mute:false, addRaster:false})">video 1</button>
+                <button class="command" onclick="jQuery('#bgndVideo').YTPChangeVideo({videoURL: 'BsekcY04xvQ', mute:false, addRaster:false})">video 2</button>
+                <button class="command" onclick="jQuery('#bgndVideo').YTPChangeVideo({videoURL: 'kcihcYEOeic', mute:false, startAt:10, stopAt: 363, addRaster:false})">video 3</button>
+                <button class="command" onclick="jQuery('#bgndVideo').YTPChangeVideo({videoURL: 'w0653vsLSqE', mute:false, startAt:25, stopAt: 0, addRaster:false})">video 4</button>
+                <br>
+                <br>
+                <div id="loadBox">
+                    <label for="videoID">Or insert here the ID or the complete URL of the Youtube video:</label>
+                    <input id="videoID" type="text" value="vONtGL6LzxY" onfocus="$('#loadOptions').slideDown()">
+                    <div id="loadOptions" style="display: none">
+                        <br>
+                        <input id="startAt" type="number" placeholder="starts at">
+                        <input id="stopAt" type="number" placeholder="stops at">
+                        <br>
+                        <br>
+                        <input id="audioOff" type="checkbox" checked>
+                        Audio is OFF
+                    </div>
+                    <br>
+                    <button onclick="$('#loadOptions').slideUp(); jQuery('#bgndVideo').YTPChangeVideo({videoURL: $('#videoID').val(), startAt: checkForVal($('#startAt').val()), stopAt: checkForVal($('#stopAt').val()), mute: $('#audioOff').is(':checked') })">change video</button>
+                    <div id="videoData" style="display: none">
+                        <h2 style="color: #FFFFFF; text-align: left">Current video:</h2>
+                        <div class="dida"></div>
+                    </div>
+                    <br>
+                    <button onclick="jQuery.mbYTPlayer.removeStoredData()">
+                        Remove stored data
+                    </button>
+                </div>
+            </div>
+            <div class="goto">
+                <button id="togglePlay" class="command pause" onclick="jQuery('#bgndVideo').YTPTogglePlay(changeLabel)">pause</button>
+            </div>
+        </div>
+        <div id="debug" style="display: none">
+            <a id="bgndVideo" class="player">Video</a>
+            <h2 style="color: #FFFFFF; text-align: left">Events console:
+            </h2>
+            <div id="eventListener"></div>
+        </div>
+
+    </body>
+
+</html>
