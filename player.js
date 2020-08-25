@@ -19,13 +19,14 @@ jQuery(function () {
         },
         remember_last_time: false,
         useOnMobile: true,
-        showControls: true,
+        showControls: false,
         realfullscreen: true,
         abundance: 0.01
     });
 
     myPlayer.on("YTPEnd", function (e) {
         var currentVideoID = myPlayer.YTPGetVideoID();
+        alert('currentVideoID: ' + currentVideoID)
         // short version
         if (currentVideoID === '5wHJ9T8YW2c') {
             // play scren saver version
