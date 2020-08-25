@@ -1,7 +1,7 @@
 jQuery(function () {
     var myPlayer = jQuery("#bgndVideo").YTPlayer({
         videoURL: '5wHJ9T8YW2c',
-        ratio: '4/3',
+        ratio: 'auto',
         containment: 'body',
         showControls: true,
         autoPlay: true,
@@ -19,7 +19,8 @@ jQuery(function () {
         },
         remember_last_time: false,
         useOnMobile: true,
-        showControls: false
+        showControls: false,
+        realfullscreen: true
     });
 
     myPlayer.on("YTPEnd", function (e) {

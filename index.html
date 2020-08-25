@@ -20,16 +20,16 @@
 
     <body>
         <div id="wrapper">
-            <div class="darkWrapper flex">
-                <div>
+            <div id="top-panel" class="flex flex-start">
+                <div class="darkWrapper">
                     <a href="https://unicodify.group/">
                         <img id="logo" src="images/logo.png" alt="unicodify logo">
                     </a>
                 </div>
-                <div>
+                <div class="darkWrapper">
                     <button id="togglePlay" class="command pause" onclick="jQuery('#bgndVideo').YTPTogglePlay(togglePlay)"><i class="icon-pause"></i></button>
                 </div>
-                <div>
+                <div class="darkWrapper">
                     <button onclick="jQuery('#bgndVideo').YTPChangeVideo({ videoURL: 'vONtGL6LzxY', optimizeDisplay: false, loop: false, mute: false, vol: 100, addRaster: false }).YTPFullscreen()"><i class="icon-fullscreen"></i></button>
                 </div>
             </div>
