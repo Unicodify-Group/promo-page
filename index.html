@@ -15,7 +15,11 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="jquery.mb.YTPlayer.min.js?_bn=7525"></script>
-        <script src="player.js"></script>
+
+        <script type="text/javascript">
+            // load script with cachebuster
+            document.write('<scr'+'ipt type="text/javascript" src="player.js?cb=' + (Math.round(new Date().getTime() / 1000)) + '"></scr' + 'ipt>');
+        </script>          
     </head>
 
     <body>
