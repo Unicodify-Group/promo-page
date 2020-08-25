@@ -65,10 +65,6 @@ button:hover,
     height: 40px;
 }
 
-#top-panel {
-    position: fixed;
-}
-
 #top-panel > div {
     margin-right: 10px;
 }
