@@ -26,7 +26,6 @@ jQuery(function () {
 
     myPlayer.on("YTPEnd", function (e) {
         var currentVideoID = myPlayer.YTPGetVideoID();
-        alert('currentVideoID: ', currentVideoID);
         // short version
         if (currentVideoID === '5wHJ9T8YW2c') {
             // play scren saver version
