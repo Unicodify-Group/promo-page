@@ -19,7 +19,7 @@ jQuery(function () {
         },
         remember_last_time: false,
         useOnMobile: true,
-        showControls: false,
+        showControls: true,
         realfullscreen: true,
         abundance: 0.01
     });
