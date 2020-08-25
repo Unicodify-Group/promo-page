@@ -20,7 +20,7 @@ jQuery(function () {
         remember_last_time: false,
         useOnMobile: true,
         showControls: false,
-        realfullscreen: true,
+        realfullscreen: false,
         abundance: 0.01
     });
 
@@ -36,7 +36,6 @@ jQuery(function () {
         if (currentVideoID === 'vONtGL6LzxY') {
             // play short version
             myPlayer.YTPChangeVideo({ videoURL: '5wHJ9T8YW2c', optimizeDisplay: true, loop: false, mute: true, addRaster: true });
-            myPlayer.YTPFullscreen();
         }
     });
 
