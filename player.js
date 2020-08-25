@@ -10,7 +10,7 @@ jQuery(function () {
         mute: true,
         opacity: 1,
         addRaster: true,
-        quality: 'hd720',
+        // quality: 'hd720',
         optimizeDisplay: true,
         addFilters: {
             opacity: 0,
@@ -19,7 +19,7 @@ jQuery(function () {
         },
         remember_last_time: false,
         useOnMobile: true,
-        showControls: true,
+        showControls: false,
         realfullscreen: true,
         abundance: 0.01
     });
@@ -48,11 +48,10 @@ jQuery(function () {
         }
     });
 
-    myPlayer.on("YTPFullScreenStart", function (e) {
-        debugger;
-        // play full version
-        myPlayer.YTPChangeVideo({ videoURL: 'vONtGL6LzxY', optimizeDisplay: false, loop: false, mute: false, addRaster: false });
-    });
+    // myPlayer.on("YTPFullScreenStart", function (e) {
+    //     // play full version
+    //     myPlayer.YTPChangeVideo({ videoURL: 'vONtGL6LzxY', optimizeDisplay: false, loop: false, mute: false, addRaster: false });
+    // });
 });
 
 function togglePlay(state) {
