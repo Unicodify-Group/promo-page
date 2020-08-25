@@ -18,7 +18,7 @@ jQuery(function () {
             contrast: 0
         },
         remember_last_time: false,
-        useOnMobile: true,
+        useOnMobile: false,
         showControls: false,
         realfullscreen: false,
         abundance: 0.01
