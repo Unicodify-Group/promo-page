@@ -26,7 +26,7 @@ jQuery(function () {
 
     myPlayer.on("YTPEnd", function (e) {
         var currentVideoID = myPlayer.YTPGetVideoID();
-        alert('currentVideoID: ' + currentVideoID)
+        alert('currentVideoID: ', currentVideoID);
         // short version
         if (currentVideoID === '5wHJ9T8YW2c') {
             // play scren saver version
@@ -37,6 +37,7 @@ jQuery(function () {
         if (currentVideoID === 'vONtGL6LzxY') {
             // play short version
             myPlayer.YTPFullscreen();
+            myPlayer.YTPChangeVideo({ videoURL: '5wHJ9T8YW2c', optimizeDisplay: true, loop: false, mute: true, addRaster: true });
         }
     });
 
