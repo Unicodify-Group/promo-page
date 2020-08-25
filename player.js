@@ -10,7 +10,7 @@ jQuery(function () {
         mute: true,
         opacity: 1,
         addRaster: true,
-        quality: 'hd1080',
+        quality: 'hd720',
         optimizeDisplay: true,
         addFilters: {
             opacity: 0,
